@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.digitalcrafting.bwa.data.mybatis.NotesMapper">
+    <resultMap id="NoteResultMap" type="com.digitalcrafting.bwa.data.entity.NoteEntity">
+        <id column="username" property="pk.username"/>
+        <id column="note_id" property="pk.noteId"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.digitalcrafting.bwa.data.entity.NoteEntity">
+        INSERT INTO NOTES (
+          note_id,
+          username,
+          note_text
+        ) VALUES (
+          seq_notes.nextVal,
+          #{pk.username},
+          #{noteText}
+        )
+    </insert>
+</mapper>

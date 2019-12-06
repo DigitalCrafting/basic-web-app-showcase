@@ -1,0 +1,4 @@
+config:
+  debug:
+    allow:
+      cors: true

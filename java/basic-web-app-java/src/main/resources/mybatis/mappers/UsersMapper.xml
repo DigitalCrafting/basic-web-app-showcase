@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.digitalcrafting.bwa.data.mybatis.UsersMapper">
+
+    <resultMap id="UserEntityMap"
+               type="com.digitalcrafting.bwa.data.entity.UserEntity">
+        <id property="pk.value" column="username"/>
+    </resultMap>
+
+    <select id="getByPrimaryKey" resultMap="UserEntityMap" parameterType="com.digitalcrafting.bwa.data.entity.StringPrimaryKey">
+        SELECT * FROM USERS WHERE username = #{value}
+    </select>
+
+    <insert id="insert" parameterType="com.digitalcrafting.bwa.data.entity.UserEntity">
+        INSERT INTO USERS (
+          username,
+          password_hash,
+          first_name,
+          last_name
+        ) VALUES (
+          #{pk.value},
+          #{passwordHash},
+          #{firstName},
+          #{lastName}
+        )
+    </insert>
+</mapper>

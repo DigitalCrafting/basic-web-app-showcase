@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-12">
+        <form [formGroup]="formGroup">
+          <div class="form-group">
+            <label for="inputNoteText">Add new note</label>
+            <input
+              [class.is-invalid]="formGroup.get('noteText').invalid"
+              formControlName="noteText"
+              type="textarea"
+              class="form-control"
+              placeholder="Enter note"
+              id="inputNoteText"
+            >
+          </div>
+          <button type="submit"
+                  class="btn btn-primary float-right"
+                  (click)="onAddClicked()"
+                  [disabled]="formGroup.invalid"
+          >Add note</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

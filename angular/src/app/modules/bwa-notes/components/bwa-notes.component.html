@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-12" *ngFor="let note of notesList">
+    <app-bwa-single-note
+      [note]="note"
+      (deleteClicked)="onDeleteClicked($event)"
+    ></app-bwa-single-note>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <app-bwa-add-note
+      #addNoteComponent
+      (addClicked)="onAddCLicked($event)"
+    ></app-bwa-add-note>
+  </div>
+</div>
