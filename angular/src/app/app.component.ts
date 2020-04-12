@@ -17,7 +17,7 @@ import {BwaLoginVerifyService} from "./utils/bwa-login-verify.service";
 })
 export class AppComponent implements OnInit {
 
-  @ViewChild("dynamicComponentManager", {static: false}) dynamicComponentManager: BwaDynamicComponentManager;
+  @ViewChild("dynamicComponentManager") dynamicComponentManager: BwaDynamicComponentManager;
 
   private loginFinishedSubscriber: Subscription;
   private signUpFinishedSubscriber: Subscription;

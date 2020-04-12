@@ -7,7 +7,7 @@ import {ObjectsUtils} from "../utils/bwa-utils";
 })
 // tslint:disable-next-line:component-class-suffix
 export class BwaDynamicComponentManager implements OnDestroy {
-  @ViewChild('container', {read: ViewContainerRef, static: false}) container;
+  @ViewChild('container', { read: ViewContainerRef }) container;
 
   private _cmpRef: ComponentRef<any>;
 
