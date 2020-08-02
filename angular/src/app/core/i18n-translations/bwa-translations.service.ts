@@ -1,18 +1,21 @@
-import {EventEmitter, Injectable} from "@angular/core";
+import {EventEmitter, Injectable, Optional} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {BwaTranslationsObject} from "./bwa-translations.utils";
 
-@Injectable()
+/** TODO create factory providing url*/
+@Injectable({
+  providedIn: "root"
+})
 export class BwaTranslationsService {
   public translations: BwaTranslationsObject;
   public languageChangedEventEmitter: EventEmitter<BwaTranslationsObject> = new EventEmitter<BwaTranslationsObject>();
 
   private loadingTranslations: Observable<any>;
   private pending: boolean = false;
+  private _translationsUrl: string;
 
-  constructor(private _httpClient: HttpClient,
-              private _translationsUrl: string) {
+  constructor(private _httpClient: HttpClient) {
   }
 
   public getTranslations(): Observable<BwaTranslationsObject> {
