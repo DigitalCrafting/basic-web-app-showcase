@@ -9,7 +9,7 @@ import {BwaAddNoteComponent} from "./bwa-add-note/bwa-add-note.component";
   styleUrls: ['./bwa-notes.component.scss']
 })
 export class BwaNotesComponent implements AfterViewInit {
-  @ViewChild('addNoteComponent', {static: false}) addNoteComponent: BwaAddNoteComponent;
+  @ViewChild('addNoteComponent') addNoteComponent: BwaAddNoteComponent;
 
   notesList: Array<BwaNoteModel> = [];
 
