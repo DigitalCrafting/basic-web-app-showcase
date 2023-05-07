@@ -10,7 +10,7 @@
     <properties>
         <maven.compiler.target>1.10</maven.compiler.target>
         <maven.compiler.source>1.10</maven.compiler.source>
-        <spring.version>5.1.9.RELEASE</spring.version>
+        <spring.version>5.2.24.RELEASE</spring.version>
         <slf4j-api.version>1.7.25</slf4j-api.version>
         <jaxb.version>2.3.0.1</jaxb.version>
         <jaxb-api.version>2.3.1</jaxb-api.version>
